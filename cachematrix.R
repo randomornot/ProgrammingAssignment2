@@ -28,13 +28,13 @@ cacheSolve <- function(x, ...) {
 ## Return a matrix that is the inverse of 'x'
 
   i <- x$getinv()  ## assign value of inverse in list x, to check whether we have cached it or not
-  if(!is.null(i)) {     ## if we have cached it, we will have non 0 inverse value defined in line 15 above
+  if(!is.null(i)) {     ## if we have cached it, we will have non 0 inverse value defined in line 16 above
     message("getting cached data")
     return(i)
   }
   data <- x$get()  ##In case not cached till now, getting the matrix whose inverse to be found
   i <- solve(data, ...) ## finding the inverse using solve function
-  x$setinv(i)  ## Setting inverse value in the list where it gets cached because of <<- operator used in 15 line
+  x$setinv(i)  ## Setting inverse value in the list where it gets cached because of <<- operator used in line 16
   i
   
 
